@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keithston - Delicious Cafe</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Google Fonts: Playfair Display for elegant headings, Inter for standard text -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,600;1,700&display=swap" rel="stylesheet">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            DEFAULT: '#8d4825', // Brown accent color
+                            dark: '#1c1c1c',    // Dark background for cards/footer
+                            light: '#f9f9f9'    // Light background
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Custom base styles */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f5f5f5;
+        }
+        h1, h2, h3, h4, .serif-heading {
+            font-family: 'Playfair Display', serif;
+        }
+        .heading-italic {
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            font-weight: 700;
+        }
+        
+        /* Smooth scrolling */
+        html { scroll-behavior: smooth; }
+        
+        /* Dark overlay for background images */
+        .bg-overlay {
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+    </style>
+</head>
+<body class="antialiased text-gray-800">
+
+    <header class="relative w-full h-[600px] md:h-[700px] bg-black">
+        <!-- Hero Background Image -->
+        <img src="https://images.pexels.com/photos/30785736/pexels-photo-30785736.jpeg" alt="Bakery Background" class="absolute inset-0 w-full h-full object-cover opacity-60">
+        
+        <!-- Navigation Bar -->
+        <nav class="relative z-10 container mx-auto px-6 py-6 flex items-center justify-between text-white">
+            <div class="flex items-center gap-2">
+                <!-- Logo -->
+                <div class="text-center">
+                    <i class="fa-solid fa-mug-hot text-brand text-2xl mb-1"></i>
+                    <div class="font-serif font-bold text-sm tracking-widest uppercase">Keithston</div>
+                </div>
+            </div>
+            
+            <div class="hidden md:flex space-x-8 font-medium">
+                <a href="#" class="hover:text-brand transition-colors">Home</a>
+                <a href="#" class="hover:text-brand transition-colors">Blog</a>
+                <a href="#" class="hover:text-brand transition-colors">Contact Us</a>
+                <a href="#" class="hover:text-brand transition-colors">Services</a>
+            </div>
+            
+            <!-- Mobile Menu Button (visual only for this mockup) -->
+            <button class="md:hidden text-2xl"><i class="fa-solid fa-bars"></i></button>
+        </nav>
+
+        <!-- Hero Content -->
+        <div class="relative z-10 container mx-auto px-6 h-full flex items-center pb-20">
+            <div class="max-w-lg text-white">
+                <p class="text-sm md:text-base text-gray-300 mb-2">Delicious Cafe</p>
+                <h1 class="heading-italic text-5xl md:text-6xl lg:text-7xl mb-8 leading-tight">
+                    Sweet Treats, <br>Perfect Eats
+                </h1>
+                <div class="flex flex-wrap gap-4">
+                    <a href="#" class="bg-brand hover:bg-[#733a1e] text-white px-8 py-3 rounded text-sm font-medium transition-colors shadow-lg">
+                        Shop Now
+                    </a>
+                    <a href="#" class="bg-transparent hover:bg-white/10 text-white px-8 py-3 rounded text-sm font-medium transition-colors border border-transparent hover:border-white">
+                        Learn More
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="bg-white py-20 px-6">
+        <div class="container mx-auto max-w-5xl">
+            <h2 class="heading-italic text-4xl text-center mb-12 text-black">Top Products</h2>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+                <!-- Product Card 1 -->
+                <div class="bg-brand-dark rounded-lg overflow-hidden flex flex-col relative group">
+                    <img src="https://images.pexels.com/photos/1998635/pexels-photo-1998635.jpeg" alt="Pastry" class="w-full aspect-square object-cover opacity-80 group-hover:opacity-100 transition-opacity">
+                    <div class="p-5 text-gray-300 flex flex-col justify-between flex-grow absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/90 via-black/60 to-transparent pt-12">
+                        <div class="flex justify-between items-center mb-2 text-sm">
+                            <span class="font-bold text-white">40 Baht</span>
+                            <i class="fa-solid fa-circle-info border border-gray-400 text-gray-400 rounded-full w-5 h-5 flex items-center justify-center text-[10px] cursor-pointer hover:text-white"></i>
+                        </div>
+                        <div class="flex justify-between items-end">
+                            <h3 class="text-white text-sm font-medium w-1/2">Whole Grain Bread</h3>
+                            <button class="bg-brand hover:bg-[#733a1e] text-white px-4 py-1.5 rounded text-xs transition-colors">Add</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product Card 2 -->
+                <div class="bg-brand-dark rounded-lg overflow-hidden flex flex-col relative group">
+                    <img src="https://images.pexels.com/photos/6420304/pexels-photo-6420304.jpeg" alt="Pastry" class="w-full aspect-square object-cover opacity-80 group-hover:opacity-100 transition-opacity">
+                    <div class="p-5 text-gray-300 flex flex-col justify-between flex-grow absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/90 via-black/60 to-transparent pt-12">
+                        <div class="flex justify-between items-center mb-2 text-sm">
+                            <span class="font-bold text-white">40 Baht</span>
+                            <i class="fa-solid fa-circle-info border border-gray-400 text-gray-400 rounded-full w-5 h-5 flex items-center justify-center text-[10px] cursor-pointer hover:text-white"></i>
+                        </div>
+                        <div class="flex justify-between items-end">
+                            <h3 class="text-white text-sm font-medium w-1/2">Fruit Danish Pastry</h3>
+                            <button class="bg-brand hover:bg-[#733a1e] text-white px-4 py-1.5 rounded text-xs transition-colors">Add</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product Card 3 -->
+                <div class="bg-brand-dark rounded-lg overflow-hidden flex flex-col relative group">
+                    <img src="https://images.pexels.com/photos/30862323/pexels-photo-30862323.jpeg" alt="Pastry" class="w-full aspect-square object-cover opacity-80 group-hover:opacity-100 transition-opacity">
+                    <div class="p-5 text-gray-300 flex flex-col justify-between flex-grow absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/90 via-black/60 to-transparent pt-12">
+                        <div class="flex justify-between items-center mb-2 text-sm">
+                            <span class="font-bold text-white">40 Baht</span>
+                            <i class="fa-solid fa-circle-info border border-gray-400 text-gray-400 rounded-full w-5 h-5 flex items-center justify-center text-[10px] cursor-pointer hover:text-white"></i>
+                        </div>
+                        <div class="flex justify-between items-end">
+                            <h3 class="text-white text-sm font-medium w-1/2">Whole Grain Baguette</h3>
+                            <button class="bg-brand hover:bg-[#733a1e] text-white px-4 py-1.5 rounded text-xs transition-colors">Add</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product Card 4 -->
+                <div class="bg-brand-dark rounded-lg overflow-hidden flex flex-col relative group">
+                    <img src="https://images.pexels.com/photos/8937166/pexels-photo-8937166.jpeg" alt="Pastry" class="w-full aspect-square object-cover opacity-80 group-hover:opacity-100 transition-opacity">
+                    <div class="p-5 text-gray-300 flex flex-col justify-between flex-grow absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/90 via-black/60 to-transparent pt-12">
+                        <div class="flex justify-between items-center mb-2 text-sm">
+                            <span class="font-bold text-white">40 Baht</span>
+                            <i class="fa-solid fa-circle-info border border-gray-400 text-gray-400 rounded-full w-5 h-5 flex items-center justify-center text-[10px] cursor-pointer hover:text-white"></i>
+                        </div>
+                        <div class="flex justify-between items-end">
+                            <h3 class="text-white text-sm font-medium w-1/2">Classic Sourdough</h3>
+                            <button class="bg-brand hover:bg-[#733a1e] text-white px-4 py-1.5 rounded text-xs transition-colors">Add</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product Card 5 -->
+                <div class="bg-brand-dark rounded-lg overflow-hidden flex flex-col relative group">
+                    <img src="https://images.pexels.com/photos/28377756/pexels-photo-28377756.jpeg" alt="Pastry" class="w-full aspect-square object-cover opacity-80 group-hover:opacity-100 transition-opacity">
+                    <div class="p-5 text-gray-300 flex flex-col justify-between flex-grow absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/90 via-black/60 to-transparent pt-12">
+                        <div class="flex justify-between items-center mb-2 text-sm">
+                            <span class="font-bold text-white">40 Baht</span>
+                            <i class="fa-solid fa-circle-info border border-gray-400 text-gray-400 rounded-full w-5 h-5 flex items-center justify-center text-[10px] cursor-pointer hover:text-white"></i>
+                        </div>
+                        <div class="flex justify-between items-end">
+                            <h3 class="text-white text-sm font-medium w-1/2">Apple Pie Tart</h3>
+                            <button class="bg-brand hover:bg-[#733a1e] text-white px-4 py-1.5 rounded text-xs transition-colors">Add</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product Card 6 -->
+                <div class="bg-brand-dark rounded-lg overflow-hidden flex flex-col relative group">
+                    <img src="https://images.pexels.com/photos/28377759/pexels-photo-28377759.jpeg" alt="Pastry" class="w-full aspect-square object-cover opacity-80 group-hover:opacity-100 transition-opacity">
+                    <div class="p-5 text-gray-300 flex flex-col justify-between flex-grow absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/90 via-black/60 to-transparent pt-12">
+                        <div class="flex justify-between items-center mb-2 text-sm">
+                            <span class="font-bold text-white">40 Baht</span>
+                            <i class="fa-solid fa-circle-info border border-gray-400 text-gray-400 rounded-full w-5 h-5 flex items-center justify-center text-[10px] cursor-pointer hover:text-white"></i>
+                        </div>
+                        <div class="flex justify-between items-end">
+                            <h3 class="text-white text-sm font-medium w-1/2">Seeded Bun Round</h3>
+                            <button class="bg-brand hover:bg-[#733a1e] text-white px-4 py-1.5 rounded text-xs transition-colors">Add</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="relative bg-white border-t border-b border-gray-200">
+        <div class="absolute inset-0 bg-cover bg-center opacity-30" style="background-image: url('https://images.pexels.com/photos/7405059/pexels-photo-7405059.jpeg');"></div>
+        <div class="relative z-10 container mx-auto px-6 py-20 flex flex-col items-center text-center">
+            <h2 class="heading-italic text-3xl md:text-4xl text-brand mb-4">20% Off Your First Order</h2>
+            <p class="text-gray-600 max-w-md mb-6 text-sm">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nesciunt rem.
+            </p>
+            <a href="#" class="bg-brand hover:bg-[#733a1e] text-white px-8 py-2.5 rounded text-sm font-medium transition-colors shadow-sm">
+                Learn More
+            </a>
+        </div>
+    </section>
+
+    <section class="bg-white py-20 px-6">
+        <div class="container mx-auto max-w-5xl">
+            <h2 class="heading-italic text-4xl text-center mb-8 text-black">Explore More</h2>
+            
+            <!-- Category Tabs -->
+            <ul class="flex flex-wrap justify-center gap-6 md:gap-8 mb-10 text-sm font-medium text-gray-600">
+                <li class="text-brand border-b-2 border-brand pb-1 cursor-pointer">Cake</li>
+                <li class="hover:text-brand cursor-pointer transition-colors pb-1 border-b-2 border-transparent">Muffins</li>
+                <li class="hover:text-brand cursor-pointer transition-colors pb-1 border-b-2 border-transparent">Croissant</li>
+                <li class="hover:text-brand cursor-pointer transition-colors pb-1 border-b-2 border-transparent">Bread</li>
+                <li class="hover:text-brand cursor-pointer transition-colors pb-1 border-b-2 border-transparent">Tart</li>
+                <li class="hover:text-brand cursor-pointer transition-colors pb-1 border-b-2 border-transparent">Favorite</li>
+            </ul>
+
+            <!-- Gallery Grid -->
+            <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+                <img src="https://images.pexels.com/photos/29645489/pexels-photo-29645489.jpeg" alt="Muffins" class="w-full aspect-square object-cover rounded-lg shadow-sm hover:shadow-md transition-shadow">
+                <img src="https://images.pexels.com/photos/31452265/pexels-photo-31452265.jpeg" alt="Cake" class="w-full aspect-square object-cover rounded-lg shadow-sm hover:shadow-md transition-shadow">
+                <img src="https://images.pexels.com/photos/31889933/pexels-photo-31889933.jpeg" alt="Tart" class="w-full aspect-square object-cover rounded-lg shadow-sm hover:shadow-md transition-shadow">
+                <img src="https://images.pexels.com/photos/34073608/pexels-photo-34073608.jpeg" alt="Pound Cake" class="w-full aspect-square object-cover rounded-lg shadow-sm hover:shadow-md transition-shadow">
+                <img src="https://images.pexels.com/photos/27304336/pexels-photo-27304336.jpeg" alt="Chocolate Cake" class="w-full aspect-square object-cover rounded-lg shadow-sm hover:shadow-md transition-shadow">
+                <img src="https://images.pexels.com/photos/37322568/pexels-photo-37322568.jpeg" alt="Cupcake" class="w-full aspect-square object-cover rounded-lg shadow-sm hover:shadow-md transition-shadow">
+            </div>
+        </div>
+    </section>
+
+    <section class="relative w-full h-[350px] bg-black flex items-center justify-center">
+        <!-- Background Image -->
+        <img src="https://images.pexels.com/photos/34073612/pexels-photo-34073612.jpeg" alt="About Us Background" class="absolute inset-0 w-full h-full object-cover opacity-50">
+        
+        <div class="relative z-10 text-center px-6">
+            <h2 class="heading-italic text-3xl md:text-4xl text-white mb-4">About us</h2>
+            <p class="text-gray-300 max-w-md mx-auto mb-6 text-sm">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt rem cupiditate unde nemo omnis sequi.
+            </p>
+            <a href="#" class="bg-brand hover:bg-[#733a1e] text-white px-8 py-2.5 rounded text-sm font-medium transition-colors shadow-sm">
+                Read More
+            </a>
+        </div>
+    </section>
+
+    <section class="bg-white py-20 px-6">
+        <div class="container mx-auto max-w-5xl">
+            <h2 class="heading-italic text-4xl text-center mb-12 text-black">Featured Treats</h2>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+                <!-- Item 1 -->
+                <div>
+                    <img src="https://images.unsplash.com/photo-1612203985729-70726954388c?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Puff Pastry" class="w-full aspect-square object-cover rounded-lg shadow-md mb-4 bg-brand-dark">
+                    <div class="flex justify-between items-center px-1">
+                        <h3 class="font-semibold text-lg text-black">Puff Pastry</h3>
+                        <span class="font-bold text-lg text-black">8 Baht</span>
+                    </div>
+                </div>
+
+                <!-- Item 2 -->
+                <div>
+                    <img src="https://images.unsplash.com/photo-1551024601-bec78aea704b?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Doughnuts" class="w-full aspect-square object-cover rounded-lg shadow-md mb-4 bg-brand-dark">
+                    <div class="flex justify-between items-center px-1">
+                        <h3 class="font-semibold text-lg text-black">Doughnuts</h3>
+                        <span class="font-bold text-lg text-black">8 Baht</span>
+                    </div>
+                </div>
+
+                <!-- Item 3 -->
+                <div>
+                    <img src="https://images.unsplash.com/photo-1606890737304-57a1ca8a5b62?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Brownies" class="w-full aspect-square object-cover rounded-lg shadow-md mb-4 bg-brand-dark">
+                    <div class="flex justify-between items-center px-1">
+                        <h3 class="font-semibold text-lg text-black">Brownies</h3>
+                        <span class="font-bold text-lg text-black">8 Baht</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="relative bg-brand-dark text-white pt-16 pb-8 border-t-[8px] border-[#111]">
+        <!-- Subtle dark textured overlay if needed, using linear gradient here for simplicity -->
+        <div class="absolute inset-0 bg-gradient-to-b from-[#1c1c1c] to-black opacity-90 pointer-events-none"></div>
+        
+        <div class="relative z-10 container mx-auto px-6 max-w-6xl">
+            <!-- Footer Top: Logo and Socials -->
+            <div class="flex flex-col md:flex-row justify-between items-center mb-8 gap-4">
+                <div class="flex items-center gap-2">
+                    <i class="fa-solid fa-mug-hot text-brand text-2xl"></i>
+                    <div class="font-serif font-bold tracking-widest text-lg uppercase">Keithston</div>
+                </div>
+                <div class="flex items-center gap-4">
+                    <span class="text-brand font-medium">Follow us</span>
+                    <div class="flex gap-3 text-xl text-[#d0a78b]">
+                        <a href="#" class="hover:text-white transition-colors"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#" class="hover:text-white transition-colors"><i class="fa-brands fa-pinterest-p"></i></a>
+                        <a href="#" class="hover:text-white transition-colors"><i class="fa-brands fa-whatsapp"></i></a>
+                        <a href="#" class="hover:text-white transition-colors"><i class="fa-brands fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <hr class="border-gray-800 mb-10">
+
+            <!-- Footer Middle: 3 Columns -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-10 mb-12">
+                <!-- Col 1: About Us -->
+                <div>
+                    <h4 class="text-brand font-bold text-lg mb-4">About Us</h4>
+                    <ul class="text-gray-400 space-y-2 text-sm leading-relaxed">
+                        <li>(02) 807-4500</li>
+                        <li>info@sau.ac.th</li>
+                        <li>19/1 Phetkasem Road<br>Nongkham Bangkok<br>10160</li>
+                    </ul>
+                </div>
+
+                <!-- Col 2: Explore -->
+                <div>
+                    <h4 class="text-brand font-bold text-lg mb-4">Explore</h4>
+                    <ul class="text-gray-400 space-y-2 text-sm font-medium">
+                        <li><a href="#" class="hover:text-brand transition-colors">Home</a></li>
+                        <li><a href="#" class="hover:text-brand transition-colors">Blog</a></li>
+                        <li><a href="#" class="hover:text-brand transition-colors">Contact us</a></li>
+                        <li><a href="#" class="hover:text-brand transition-colors">Services</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 3: Recent News -->
+                <div>
+                    <h4 class="text-brand font-bold text-lg mb-4">Recent News</h4>
+                    <div class="space-y-4">
+                        <div class="flex items-center gap-4">
+                            <img src="https://images.unsplash.com/photo-1550617931-e17a7b70dce2?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80" alt="News 1" class="w-16 h-12 object-cover rounded bg-white">
+                            <div>
+                                <p class="text-xs text-brand mb-1">June 14, 2025</p>
+                                <p class="text-sm font-medium text-white hover:text-brand cursor-pointer transition-colors">Puff pastry bliss.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <img src="https://images.unsplash.com/photo-1550617931-e17a7b70dce2?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80" alt="News 2" class="w-16 h-12 object-cover rounded bg-white">
+                            <div>
+                                <p class="text-xs text-brand mb-1">June 14, 2025</p>
+                                <p class="text-sm font-medium text-white hover:text-brand cursor-pointer transition-colors">Puff pastry bliss.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer Bottom: Copyright -->
+            <div class="text-center text-gray-500 text-xs">
+                © 2025 Bake House. All rights reserved
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
